@@ -2,8 +2,9 @@ const citiesArray = document.querySelector("#city-ddl");
  
 
 function loadCitiesArray() {
-    let option = new Option("Select City...", "");
-    citiesArray.appendChild(option);
+    let defualtOption = document.createElement("option")
+    defualtOption.value = "",
+    defualtOption.innerText = "Select City...";
    
     for (const city of citiesArray) {
       let option = document.createElement("option");
