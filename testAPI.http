@@ -1,0 +1,3 @@
+GET  https://api.weather.gov/points/37.8728324788388,-122.27235076525416
+###
+GET https://api.weather.gov/gridpoints/MTR/91,108/forecast
