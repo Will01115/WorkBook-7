@@ -20,12 +20,10 @@ function getPoint(city) {
     .then((response) => response.json())
     .then(function (point) {
       let forecastUrl = point.properties.forecast;
-      console.log(forecastUrl);
 
       fetch(forecastUrl)
         .then((response) => response.json())
         .then(function (forecast) {
-          console.log(forecast.properties.periods);
           for (const period of forecast.properties.periods) {
             buildTableRow(period);
           }
@@ -34,7 +32,6 @@ function getPoint(city) {
 }
 
 function buildTableRow(period) {
-  console.log(period.name, period.temperature, period.detailedForecast);
   let row = forecastTableBody.insertRow();
 
   let td1 = row.insertCell();
@@ -48,8 +45,11 @@ function buildTableRow(period) {
 }
 
 function handleCityChanged() {
-  console.log(cityDDL.value);
-  getPoint();
+  const cityName = cityDDL.value
+  console.log(cityName);
+  cities.find();
+  console.log(city);
+  getPoint(city);
 }
 // Test API using REST Client
 // Call the Points API with Lat, Long
