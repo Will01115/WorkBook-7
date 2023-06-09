@@ -17,7 +17,7 @@ function loadCitiesArray() {
 loadCitiesArray();
 
 function getPoint(city) {
-  fetch("https://api.weather.gov/points/32.6791,-97.4641")
+  fetch(`https://api.weather.gov/points/${city.latitude},${city.longitude}`)
     .then((response) => response.json())
     .then(function (point) {
       let forecastUrl = point.properties.forecast;
@@ -25,6 +25,7 @@ function getPoint(city) {
       fetch(forecastUrl)
         .then((response) => response.json())
         .then(function (forecast) {
+          forecastTableBody.innerHTML = "";
           for (const period of forecast.properties.periods) {
             buildTableRow(period);
           }
@@ -47,16 +48,10 @@ function buildTableRow(period) {
 
 function handleCityChanged() {
   const cityName = cityDDL.value;
-  console.log(cityName);
-  selectedCity = cities.find(function (city) {
+
+  const selectedCity = cities.find(function (city) {
     return city.name == cityName;
   });
-  console.log(selectedCity);
+
   getPoint(selectedCity);
 }
-// Test API using REST Client
-// Call the Points API with Lat, Long
-// Then log out the response data: office grid x,y
-// Then call the forecast API with grid x,y + gridID
-// Then log out the forecast data
-// Then add to table
