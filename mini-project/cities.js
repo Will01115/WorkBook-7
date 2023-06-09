@@ -1,6 +1,6 @@
-const citiesArray = [
-  { City: "Benbrook, Tx", Latitude: 32.6732, Longitude: -97.4606 },
-  { City: "Pittsburgh, Pa", Latitude: 40.4406, Longitude: 79.9959 },
-  { City: "Miami, Fl", Latitude: 25.7617, Longitude: 80.192 },
-  { City: "Berekley, CA", Latitude: 37.8728324788388, Longitude:-122.27235076525416 },
+const cities = [
+  { name: "Benbrook, Tx", latitude: 32.6732, longitude: -97.4606 },
+  { name: "Pittsburgh, Pa", latitude: 40.4406, longitude: 79.9959 },
+  { name: "Miami, Fl", latitude: 25.7617, longitude: 80.192 },
+  { name: "Berekley, CA", latitude: 37.8728324788388, longitude:-122.27235076525416 },
 ];

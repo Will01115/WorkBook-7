@@ -12,15 +12,17 @@
   </head>
   <body>
     <main>
+      <h3>Weather</h3>
       <label for="city-ddl">City</label>
-      <select id="city-ddl">
-        <option value="">Select city...</option>
-        <option value="benbrook, tx">Benbrook, Tx</option>
-        <option value="pittsburgh, pa">Pittsburgh, Pa</option>
-        <option value="miami, fl">Miami, Fl</option>
-        <option value="berekley, ca">Berkeley, Ca</option>
+      <select id="city-ddl" onchange="handleCityChanged()"></select>
+      <table>
+        <thead>
 
-      </select>
+        </thead>
+        <tbody id="forecasts-table-body">
+
+        </tbody>
+      </table>
     </main>
     <script>
       // create an array of city objects that contain lat and long
